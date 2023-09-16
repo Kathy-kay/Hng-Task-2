@@ -1,42 +1,249 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+
+
+ 
+}
+#hero{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  
+  
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+nav{
+  width: 100%;
+  height: 40px;
+  background-color: transparent;
+  padding: 40PX 70px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 3;
+  
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.hero-container img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.hero-text{
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 70px;
+}
+.logo{
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo img,
+.menu img{
+    width: 50px;
+    
+}
+.logo h2{
+  margin-left:30px;
+  
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.search{
+  width: 525px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  padding:  0 15px;
+  border: solid 1px #fff;
+  font-size: 16px;
+  border-radius: 5px;
+}
+ input{
+  background-color: transparent;
+  border: none;
+  height: 100%;
+  width: 100%;
+  font-size: 15px;
+  margin-right: 5px;
+  color: #fff;
+}
+input::placeholder{
+  color: #fff;
+}
+ input:focus{
+  outline: none;
+}
+.search img{
+  cursor: pointer;
+}
+.menu{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu p{
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-right: 30px;
+}
+.hero{
+  height: 100vh;
+  position: relative;
+}
+.hero-container::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+ 
+}
+.hero-text{
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  width: 600px;
+  padding-top: 170px;
+  padding-left: 70px;
+}
+.hero-text h1{
+  font-size: 70px;
+  margin-bottom: 10px;
+}
+.rating{
+  display: flex;
+  margin-top:10px ;
+  margin-bottom: 15px;
+}
+.icon{
+  margin-right: 50px;
+}
+.icon img {
+  margin-right: 15px;
+}
+.icon span{
+  font-size: 20px;
+}
+.hero-description {
+  font-size: 18px;
+ 
+}
+button{
+  background-color: #BE123C;
+  margin-top: 15PX;
+
+  border: #BE123C;
+  padding: 5PX 10PX;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  
+}
+.btn-text{
+  margin-left: 5px;
+  
+}
+.movie-container{
+  width: 100%;
+ padding: 100px 70px 0;
+}
+.movie-topic{
+  display: flex;
+  justify-content: space-between;
+}
+.movie-list{
+  padding-top:60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  
+}
+@media (min-width: 1200px) {
+  .movie-list {
+    grid-template-columns: repeat(4, 1fr); /* Four columns on larger screens */
   }
-  to {
-    transform: rotate(360deg);
+}
+
+.movie-card{
+  background-color: #fff;
+ 
+  margin-bottom: 50px;
+  
+}
+.movie-card img{
+  height: 300px;
+  width: 250px;
+}
+.movie-card p{
+  margin-top: 10px;
+  font-size: 13px;
+}
+.movie-card h3{
+  margin-top: 20px;
+}
+footer{
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ padding-top: 20px;
+}
+.social-icon{
+  display: flex;
+}
+.social-icon img{
+  margin-right: 40px;
+}
+ .terms{
+  margin-top: 30px;
+  display: flex;
+}
+.terms p{
+  margin-right:40px ;
+  font-weight: bold;
+}
+footer p{
+  margin-top: 30px;
+}
+@media screen and (max-width: 700px) {
+  .logo img,
+  .menu img {
+    width: 50px; /* Set the width of the logo and menu images */
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  
+  .logo h2,
+  .menu p {
+    display: none; /* Hide the h2 and p elements */
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  nav,
+  .hero-text,
+  .movie-container{
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .search{
+    width: 300px;
+  }
+  .hero-text{
+    width: 400px;
+  }
+  .hero-text h1{
+    font-size: 50px;
+  }
 }
